@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<bottomsheet:BottomSheet
+	x:Class="BottomSheetSample.BottomSheet2"
+	xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+	xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+	xmlns:bottomsheet="http://pluginmauibottomsheet.com"
+	CurrentState="Peek"
+	HasHandle="True"
+	IsModal="False"
+	
+	States="Peek">
+	<bottomsheet:BottomSheet.Content>
+		<bottomsheet:BottomSheetContent>
+			<bottomsheet:BottomSheetContent.ContentTemplate>
+				<DataTemplate>
+					<VerticalStackLayout HeightRequest="150">
+						<VerticalStackLayout.Behaviors>
+							<bottomsheet:BottomSheetPeekBehavior />
+						</VerticalStackLayout.Behaviors>
+						<Label
+							HorizontalOptions="Center"
+							Text="Welcome to .NET MAUI! Bottom Sheet #2"
+							VerticalOptions="Center" />
+					</VerticalStackLayout>
+				</DataTemplate>
+			</bottomsheet:BottomSheetContent.ContentTemplate>
+		</bottomsheet:BottomSheetContent>
+	</bottomsheet:BottomSheet.Content>
+</bottomsheet:BottomSheet>
