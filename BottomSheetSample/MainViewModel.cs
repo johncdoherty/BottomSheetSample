@@ -1,4 +1,5 @@
 ﻿using CommunityToolkit.Mvvm.Input;
+using CommunityToolkit.Mvvm.Messaging;
 using Plugin.Maui.BottomSheet.Navigation;
 using System;
 using System.Collections.Generic;
@@ -14,6 +15,12 @@ public partial class MainViewModel
     public MainViewModel(IBottomSheetNavigationService bottomSheetNavigationService)
     {
         this.bottomSheetNavigationService = bottomSheetNavigationService;
+
+        // Register to receive StartAddRouteModeRequestMessage message
+        WeakReferenceMessenger.Default.Register<OpenBottomSheetMessage>(this, async (r, m) =>
+        {
+            OpenBottomSheet2();
+        });
     }
     [RelayCommand]
     private void OpenBottomSheet1()

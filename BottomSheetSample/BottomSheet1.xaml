@@ -21,6 +21,7 @@ States="Peek">
 							Text="Welcome to .NET MAUI! Bottom Sheet #1"
 							VerticalOptions="Center" />
 						<Button Clicked="Button_Clicked" Text="Open BottomSheet2" />
+						<Button Clicked="Button_Clicked2" Text="Open BottomSheet2 via Message" />
 					</VerticalStackLayout>
 				</DataTemplate>
 			</bottomsheet:BottomSheetContent.ContentTemplate>

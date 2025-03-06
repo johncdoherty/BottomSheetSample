@@ -1,3 +1,4 @@
+using CommunityToolkit.Mvvm.Messaging;
 using Plugin.Maui.BottomSheet;
 using Plugin.Maui.BottomSheet.Navigation;
 
@@ -19,5 +20,10 @@ public partial class BottomSheet1 : BottomSheet, IBottomSheet1
 
         this.bottomSheetNavigationService.ClearBottomSheetStack();
         this.bottomSheetNavigationService.NavigateTo(bottomSheet);
+    }
+
+    private void Button_Clicked2(object sender, EventArgs e)
+    {
+        WeakReferenceMessenger.Default.Send(new OpenBottomSheetMessage(true));
     }
 }
