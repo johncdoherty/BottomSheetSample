@@ -17,7 +17,6 @@ public partial class MainViewModel
     {
         this.bottomSheetNavigationService = bottomSheetNavigationService;
 
-        // Register to receive StartAddRouteModeRequestMessage message
         WeakReferenceMessenger.Default.Register<OpenBottomSheetMessage>(this, async (r, m) =>
         {
             await OpenBottomSheet2();
