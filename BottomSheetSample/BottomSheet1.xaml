@@ -5,9 +5,10 @@
 	xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
 	xmlns:bottomsheet="http://pluginmauibottomsheet.com"
 	CurrentState="Peek"
-HasHandle="True"
-IsModal="False"
-States="Peek">
+	HasHandle="True"
+	IsCancelable="True"
+	IsModal="True"
+	States="Peek">
 	<bottomsheet:BottomSheet.Content>
 		<bottomsheet:BottomSheetContent>
 			<bottomsheet:BottomSheetContent.ContentTemplate>
@@ -20,8 +21,6 @@ States="Peek">
 							HorizontalOptions="Center"
 							Text="Welcome to .NET MAUI! Bottom Sheet #1"
 							VerticalOptions="Center" />
-						<Button Clicked="Button_Clicked" Text="Open BottomSheet2" />
-						<Button Clicked="Button_Clicked2" Text="Open BottomSheet2 via Message" />
 					</VerticalStackLayout>
 				</DataTemplate>
 			</bottomsheet:BottomSheetContent.ContentTemplate>

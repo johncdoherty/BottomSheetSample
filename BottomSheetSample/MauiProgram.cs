@@ -1,4 +1,5 @@
-﻿using Microsoft.Extensions.Logging;
+﻿using CommunityToolkit.Maui;
+using Microsoft.Extensions.Logging;
 using Microsoft.Maui.Hosting;
 using Plugin.Maui.BottomSheet.Hosting;
 
@@ -16,6 +17,7 @@ namespace BottomSheetSample
                     fonts.AddFont("OpenSans-Regular.ttf", "OpenSansRegular");
                     fonts.AddFont("OpenSans-Semibold.ttf", "OpenSansSemibold");
                 })
+                .UseMauiCommunityToolkit()
                 .UseBottomSheet();
 
             builder.Services.AddSingleton<MainViewModel>();

@@ -6,8 +6,8 @@
 	xmlns:bottomsheet="http://pluginmauibottomsheet.com"
 	CurrentState="Peek"
 	HasHandle="True"
-	IsModal="False"
-	
+	IsCancelable="True"
+	IsModal="True"
 	States="Peek">
 	<bottomsheet:BottomSheet.Content>
 		<bottomsheet:BottomSheetContent>
