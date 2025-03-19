@@ -24,7 +24,13 @@
 				SemanticProperties.HeadingLevel="Level2"
 				Style="{StaticResource SubHeadline}"
 				Text="Welcome to &#10;.NET Multi-platform App UI" />
-
+			<HorizontalStackLayout>
+				<Label
+					LineBreakMode="WordWrap"
+					Text="Clear Bottom Sheet Stack Before Opening New Sheet"
+					WidthRequest="200" />
+				<Switch IsToggled="{Binding IsClearStackEnabled}" />
+			</HorizontalStackLayout>
 			<Button
 				Command="{Binding OpenBottomSheet1Command}"
 				HorizontalOptions="Fill"

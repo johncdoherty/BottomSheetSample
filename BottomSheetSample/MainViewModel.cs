@@ -7,9 +7,10 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using CommunityToolkit.Mvvm.ComponentModel;
 
 namespace BottomSheetSample;
-public partial class MainViewModel
+public partial class MainViewModel : ObservableObject
 {
     private readonly IBottomSheetNavigationService bottomSheetNavigationService;
 
@@ -35,12 +36,18 @@ public partial class MainViewModel
             await ShowToast("BottomSheet2 Closing");
         };
     }
+
+    [ObservableProperty]
+    private bool _isClearStackEnabled = true;
+
     [RelayCommand]
     private async Task OpenBottomSheet1()
     {
         var bottomSheet = ServiceHelper.GetService<IBottomSheet1>();
-
-        await this.bottomSheetNavigationService.ClearBottomSheetStackAsync();
+        if (this.IsClearStackEnabled)
+        {
+            await this.bottomSheetNavigationService.ClearBottomSheetStackAsync();
+        }
         await this.bottomSheetNavigationService.NavigateToAsync(bottomSheet);
     }
 
@@ -49,7 +56,10 @@ public partial class MainViewModel
     {
         var bottomSheet = ServiceHelper.GetService<IBottomSheet2>();
 
-        await this.bottomSheetNavigationService.ClearBottomSheetStackAsync();
+        if (this.IsClearStackEnabled)
+        {
+            await this.bottomSheetNavigationService.ClearBottomSheetStackAsync();
+        }
         await this.bottomSheetNavigationService.NavigateToAsync(bottomSheet);
     }
 
