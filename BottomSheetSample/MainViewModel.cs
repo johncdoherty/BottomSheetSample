@@ -28,12 +28,14 @@ public partial class MainViewModel : ObservableObject
 
         bottomSheet1.Closing += async (s, d) =>
         {
-            await ShowToast("BottomSheet1 Closing");
+            //await ShowToast("BottomSheet1 Closing");
+            await Application.Current!.Windows[0]!.Page!.DisplayAlert("Alert", "BottomSheet1 Closing", "OK");
         };
 
         bottomSheet2.Closing += async (s, d) =>
         {
-            await ShowToast("BottomSheet2 Closing");
+            //await ShowToast("BottomSheet2 Closing");
+            await Application.Current!.Windows[0]!.Page!.DisplayAlert("Alert", "BottomSheet2 Closing", "OK");
         };
     }
 
